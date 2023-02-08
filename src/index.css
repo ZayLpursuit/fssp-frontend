@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+nav{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.nav-div{
+  text-align: end;
+margin-right:50px
+
+
+}
+.homepage{
+  text-align:center;
+}
+
+
+.default-grid{
+  display:grid;
+  grid-template-columns: 25% 50% 25%;
+
+}
+.column-2{
+  grid-column: 2;
+}
+.center{
+  text-align: center;
+}
+.index-page{
+  text-align:center;
+  
+}
+.flex{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+}
+.m-top{
+  margin-top: 100px
+}
+.new-form{
+  display:grid;
+}
