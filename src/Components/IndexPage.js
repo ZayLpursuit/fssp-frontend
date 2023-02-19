@@ -39,20 +39,27 @@ export default function IndexPage(){
 
 
     const data={
-        labels:['Fiber','Protein','Sugar','Carbs','Fat'],
+        
+        
         datasets:[{data:[fiberAvg,proteinAvg,sugarAvg,carbsAvg,fatAvg],
-            backgroundColor:["aqua","green","yellow","orange","red"],}]
+            backgroundColor:["aqua","green","yellow","orange","red"], labels:['Fiber','Protein','Sugar','Carbs','Fat']}]
             
         }
         const options={colors:{
             forceOverride:true
-        }}
+        }, 
+            legend: {
+                display: false
+            },
+     
+ 
+    }
    
-    return (<div className="index-page default-grid">
+    return (<div className="index-page default-grid2">
 
         <div className="column-2 center bot">
 
-                <h1 className="center grey">Your Daily Average</h1>
+                <h1 className="center grey top">Your Daily Average</h1>
                 <h3>{total}</h3>
 
                 <div className="chart-data " style={{padding:'20px', width:'80%',}}>
@@ -63,39 +70,6 @@ export default function IndexPage(){
 
                 </div>
 
-                {/* <div className="tbl-sect">
-                <table className="table">
-                <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Name</th>
-                <th scope="col">Calories</th>
-                
-                </tr>
-            </thead>
-            <tbody>
-                {logs?
-                    
-
-                logs.map((dat,idx)=>{
-                
-                    return(
-                <tr  className="tab-row" onClick={()=>navigate(`/logs/${dat.id}`)}>
-                    <th scope="row">{idx+1}</th>
-                    <td>{dat.dte.slice(0,10)} </td>
-                    <td>{dat.name}</td> 
-                    <td>{dat.calories} </td>
-                    
-                    </tr>
-    
-                )}):"No transactions Yet"
-                }
-
-              </tbody> 
-
-                </table>
-                </div> */}
         </div>
         <div>
             <Aside logs={logs}/>

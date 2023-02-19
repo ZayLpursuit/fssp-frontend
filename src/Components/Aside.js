@@ -55,8 +55,9 @@ let sugarMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.sugar,0)
 
 
     return( 
-    <div className="m-top">
-        <div>
+    <div className="m-top aside">
+        <div className="center-2">
+            
             <h3 className="grey ten-px">Averages by Unit</h3>
        <div className="flex"> <p><strong>Daily Average:</strong></p> <div> <button onClick={()=>{if(moreLess==="Show More"){setMoreLess("Show Less")}else{setMoreLess("Show More")}}}>{moreLess}</button></div></div>
         {moreLess==="Show Less"? (

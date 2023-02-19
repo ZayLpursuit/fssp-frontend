@@ -28,23 +28,23 @@ return (
 
                 <div className="styled new-form">
                 <label htmlFor="name">Name</label>
-                <input type='text' id="name" className="" value={log.name} onChange={(e)=>handleChange(e)}/>
+                <input type='text' id="name" className="" value={log.name}  required  onChange={(e)=>handleChange(e)}/>
 
                 <label htmlFor="fiber">Fiber</label>
-                <input type='number' id="fiber" className="" value={log.fiber} onChange={(e)=>handleChange(e)}/>
+                <input type='number' id="fiber" className="" value={log.fiber}  required onChange={(e)=>handleChange(e)}/>
 
                 <label htmlFor="protein">Protein</label>
-                <input type='number' id="protein" className="" value={log.protein} onChange={(e)=>handleChange(e)}/>
+                <input type='number' id="protein" className="" value={log.protein} required  onChange={(e)=>handleChange(e)}/>
 
                 <label htmlFor="sugar">Sugar</label>
-                <input type='number' id="sugar" className="" value={log.sugar} onChange={(e)=>handleChange(e)}/>
+                <input type='number' id="sugar" className="" value={log.sugar} required  onChange={(e)=>handleChange(e)}/>
 
 
                 <label htmlFor="carbs">Carbs</label>
-                <input type='number' id="carbs" className="" value={log.carbs} onChange={(e)=>handleChange(e)}/>
+                <input type='number' id="carbs" className="" value={log.carbs} required  onChange={(e)=>handleChange(e)}/>
 
                 <label htmlFor="fat">Fat</label>
-                <input type='number' id="fat" className="" value={log.fat} onChange={(e)=>handleChange(e)}/>
+                <input type='number' id="fat" className="" value={log.fat} required  onChange={(e)=>handleChange(e)}/>
 
                 <button type="submit" className="sub def-btn">Submit</button>
                 </div>

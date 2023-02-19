@@ -190,6 +190,7 @@ height:600px;
 .tbl-sect{
   grid-column: 3;
   margin-top: 20px;
+  /* margin-right: 15px; */
 }
 .chart-data{
   margin: auto auto;
@@ -212,8 +213,26 @@ height:600px;
 }
 .aside-style{
 
-  width: 80%;
+  width: 50%;
   margin:auto auto;
   margin-bottom: 10px;
 
+}
+
+.default-grid2{
+  display:grid;
+  grid-template-columns:  1% 60% 39%;
+
+}
+.top{
+  margin-top: 20px;
+}
+.aside{
+  width:80%;
+  margin-right:10px;
+  text-align: center;
+}
+.center-2{
+  margin:auto auto;
+  text-align: center;
 }
