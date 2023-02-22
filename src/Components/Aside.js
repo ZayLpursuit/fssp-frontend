@@ -38,19 +38,23 @@ let proteinTotal=logs.reduce((acc,el)=>acc+=el.protein,0)
 let fiberTotal=logs.reduce((acc,el)=>acc+=el.fiber,0)
 let sugarTotal=logs.reduce((acc,el)=>acc+=el.sugar,0)
 
-let carbsWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.carbs,0)
-let fatWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.fat,0)
-let proteinWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.protein,0)
-let fiberWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.fiber,0)
-let sugarWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.sugar,0)
+
+
+ let carbsWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.carbs,0)
+ let fatWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.fat,0)
+ let proteinWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.protein,0)
+ let fiberWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.fiber,0)
+ let sugarWeeklyTotal=weeklyData.reduce((acc,el)=>acc+=el.sugar,0)
 
 
 
-let carbsMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.carbs,0)
-let fatMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.fat,0)
-let proteinMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.protein,0)
-let fiberMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.fiber,0)
-let sugarMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.sugar,0)
+ let carbsMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.carbs,0)||0
+ let fatMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.fat,0)||0
+ let proteinMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.protein,0)||0
+ let fiberMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.fiber,0)||0
+ let sugarMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.sugar,0)||0
+
+
 
 
 
@@ -62,22 +66,22 @@ let sugarMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.sugar,0)
        <div className="flex"> <p><strong>Daily Average:</strong></p> <div> <button onClick={()=>{if(moreLess==="Show More"){setMoreLess("Show Less")}else{setMoreLess("Show More")}}}>{moreLess}</button></div></div>
         {moreLess==="Show Less"? (
         <div className="aside-style">
-            <p>Carbs:{Math.floor(carbsTotal/logs.length)}g</p>
-            <p>Fiber:{Math.floor(fiberTotal/logs.length)}g</p>
-            <p>Protein:{Math.floor(proteinTotal/logs.length)}g</p>
-            <p>Sugar:{Math.floor(sugarTotal/logs.length)}g</p>
-            <p>Fat:{Math.floor(fatTotal/logs.length)}g</p>
+            <p>Carbs:{Math.floor(carbsTotal/logs.length)||0}g</p>
+            <p>Fiber:{Math.floor(fiberTotal/logs.length)||0}g</p>
+            <p>Protein:{Math.floor(proteinTotal/logs.length)||0}g</p>
+            <p>Sugar:{Math.floor(sugarTotal/logs.length)||0}g</p>
+            <p>Fat:{Math.floor(fatTotal/logs.length)||0}g</p>
         </div>
         ): null}
 
         <div className="flex"><p><strong>Weekly Average:</strong></p> <div> <button onClick={()=>{if(moreLess1==="Show More"){setMoreLess1("Show Less")}else{setMoreLess1("Show More")}}}>{moreLess1}</button></div></div>
         {moreLess1==="Show Less"? (
         <div>
-            <p>Carbs:{Math.floor(carbsWeeklyTotal/weeklyData.length)}g</p>
-            <p>Fiber:{Math.floor(fiberWeeklyTotal/weeklyData.length)}g</p>
-            <p>Protein:{Math.floor(proteinWeeklyTotal/weeklyData.length)}g</p>
-            <p>Sugar:{Math.floor(sugarWeeklyTotal/weeklyData.length)}g</p>
-            <p>Fat:{Math.floor(fatWeeklyTotal/weeklyData.length)}g</p>
+            <p>Carbs:{Math.floor(carbsWeeklyTotal/weeklyData.length)||0}g</p>
+            <p>Fiber:{Math.floor(fiberWeeklyTotal/weeklyData.length)||0}g</p>
+            <p>Protein:{Math.floor(proteinWeeklyTotal/weeklyData.length)||0}g</p>
+            <p>Sugar:{Math.floor(sugarWeeklyTotal/weeklyData.length)||0}g</p>
+            <p>Fat:{Math.floor(fatWeeklyTotal/weeklyData.length)||0}g</p>
         </div>
         ): null}
 
@@ -86,11 +90,11 @@ let sugarMonthlyTotal=monthlyData.reduce((acc,el)=>acc+=el.sugar,0)
 
         {moreLess2==="Show Less"? (
         <div>
-            <p>Carbs:{Math.floor(carbsMonthlyTotal/monthlyData.length)}g</p>
-            <p>Fiber:{Math.floor(fiberMonthlyTotal/monthlyData.length)}g</p>
-            <p>Protein:{Math.floor(proteinMonthlyTotal/monthlyData.length)}g</p>
-            <p>Sugar:{Math.floor(sugarMonthlyTotal/monthlyData.length)}g</p>
-            <p>Fat:{Math.floor(fatMonthlyTotal/monthlyData.length)}g</p>
+            <p>Carbs:{Math.floor(carbsMonthlyTotal/monthlyData.length)||0}g</p>
+            <p>Fiber:{Math.floor(fiberMonthlyTotal/monthlyData.length)||0}g</p>
+            <p>Protein:{Math.floor(proteinMonthlyTotal/monthlyData.length)||0}g</p>
+            <p>Sugar:{Math.floor(sugarMonthlyTotal/monthlyData.length)||0}g</p>
+            <p>Fat:{Math.floor(fatMonthlyTotal/monthlyData.length)||0}g</p>
         </div>
         ): null}
 

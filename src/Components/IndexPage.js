@@ -24,25 +24,25 @@ export default function IndexPage(){
     let fiberAvg=(logs.reduce((acc,el)=>acc+=el.fiber,0)*2)/logs.length
     let sugarAvg=(logs.reduce((acc,el)=>acc+=el.sugar,0)*4)/logs.length
     
-    let calTot=carbsAvg+fatAvg+proteinAvg+fiberAvg+sugarAvg
+    let calTot=carbsAvg+fatAvg+proteinAvg+fiberAvg+sugarAvg||0
     let total
 
     if(calTot<1700||calTot>3100){
-       total= <span className="red">{calTot.toFixed(0)} calories</span>
+       total= <span className="red">{calTot.toFixed(0).toLocaleString()||0} calories</span>
     }
     else if(calTot>=2700){
-        total= <span className="green">{calTot.toFixed(0)} calories</span>
+        total= <span className="green">{calTot.toFixed(0).toLocaleString()||0} calories</span>
     }
     else{
-        total= <span className="yellow">{calTot.toFixed(0)} calories</span>
+        total= <span className="yellow">{calTot.toFixed(0).toLocaleString()||0} calories</span>
     }
 
 
     const data={
         
-        
+        labels:['Fiber','Protein','Sugar','Carbs','Fat'],
         datasets:[{data:[fiberAvg,proteinAvg,sugarAvg,carbsAvg,fatAvg],
-            backgroundColor:["aqua","green","yellow","orange","red"], labels:['Fiber','Protein','Sugar','Carbs','Fat']}]
+            backgroundColor:["aqua","green","yellow","orange","red"], }]
             
         }
         const options={colors:{
@@ -60,9 +60,11 @@ export default function IndexPage(){
         <div className="column-2 center bot">
 
                 <h1 className="center grey top">Your Daily Average</h1>
-                <h3>{total}</h3>
 
-                <div className="chart-data " style={{padding:'20px', width:'80%',}}>
+                {total?(
+                <h3>{total}</h3>):null}
+
+                <div className="chart-data " style={{padding:'20px', width:'70%',}}>
                    
 
                 <Pie data={data} options={options}></Pie>
